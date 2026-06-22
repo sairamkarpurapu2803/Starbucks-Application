@@ -13,14 +13,14 @@ pipeline {
                 script {
                     // Stop & remove old container (if exists)
                     sh """
-                    if [ \$(docker ps -aq -f name=starbucks) ]; then
-                        docker rm -f starbucks
+                    if [ \$(docker ps -aq -f name=sairam) ]; then
+                        docker rm -f sairam
                     fi
                     """
 
                     // Run latest container
                     sh """
-                    docker run -d --name starbucks -p 3000:3000 saicloud28/starbucks:latest
+                    docker run -d --name sairam -p 3000:3000 saicloud28/starbucks:latest
                     """
                 }
             }
